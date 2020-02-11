@@ -1,8 +1,8 @@
 import pymongo
 import datetime
 
-client=pymongo.MongoClient()
-# client=pymongo.MongoClient("mongodb://mongo:27018")
+# client=pymongo.MongoClient()
+client=pymongo.MongoClient("mongodb://mongo:27018")
 db = client.moodAPI
 collection=db.moods
 
