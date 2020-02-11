@@ -1,0 +1,18 @@
+version: "2"
+services:
+  app:
+    container_name: python-mood
+    build: .
+    ports:
+      - "8000:8000"
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    command: mongod --port 27018
+    volumes:
+      - ./data:/data/db
+    expose: ["27017", "27018"]
+    ports:
+      - "27018:27018"
